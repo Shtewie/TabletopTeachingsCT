@@ -1344,3 +1344,74 @@ body { padding-bottom: 4.75rem; }
   .quest-panel-inline { padding: 1.5rem 1.15rem; }
   .quest-panel-inline .panel-heading h3 { font-size: 1.375rem; }
 }
+
+/* ==========================================================================
+   9. Solo / group pricing switch
+   Two radio inputs sit just before .pricing-toggle and .pricing-grid, so
+   sibling selectors can swap which set of prices is visible. No JavaScript.
+   ========================================================================== */
+
+/* Keep the radios focusable (so they still work by keyboard) but invisible.
+   display:none would remove them from the tab order entirely. */
+.pricing-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pricing-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  width: fit-content;
+  margin: -1.5rem auto 2.5rem;
+  border-radius: 9999px;
+  border: 2px solid var(--border);
+  background: var(--card);
+  padding: 0.3rem;
+}
+.pricing-toggle label {
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 0.5rem 1.15rem;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  color: var(--muted-foreground);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  user-select: none;
+}
+.pricing-toggle label:hover { color: var(--secondary-foreground); }
+
+#mode-group:checked ~ .pricing-toggle label[for="mode-group"],
+#mode-solo:checked ~ .pricing-toggle label[for="mode-solo"] {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Show the focus ring on the label when the hidden radio has focus. */
+.pricing-radio:focus-visible ~ .pricing-toggle {
+  outline: 3px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+/* Swap which prices are visible. Small group is the default. */
+#mode-group:checked ~ .pricing-grid .for-solo { display: none; }
+#mode-solo:checked ~ .pricing-grid .for-group { display: none; }
+
+@media (max-width: 640px) {
+  .pricing-toggle { margin-bottom: 2rem; }
+  .pricing-toggle label { padding: 0.5rem 0.9rem; font-size: 0.875rem; }
+}
+
+/* A grid column of `1fr` still has an automatic minimum width, so a long
+   unbroken price string can force the whole row wider than the page. Cap the
+   minimum at zero and let long values wrap instead. */
+.pricing-grid { grid-template-columns: 1fr; }
+.price-card { min-width: 0; }
+.price-amount { overflow-wrap: anywhere; }
+
+@media (min-width: 768px) {
+  .pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
