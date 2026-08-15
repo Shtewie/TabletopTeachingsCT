@@ -64,24 +64,6 @@ const ADVENTURES = [
         "player": "Player A",
         "role": "Halfling Ranger",
         "note": "Keeps a field journal of every animal the party meets."
-      },
-      {
-        "name": "Sir Bramble",
-        "player": "Player B",
-        "role": "Tortle Paladin",
-        "note": "Has sworn an oath never to let a friend go hungry."
-      },
-      {
-        "name": "Nettle",
-        "player": "Player C",
-        "role": "Goblin Artificer",
-        "note": "Built a lantern that only lights when someone tells the truth."
-      },
-      {
-        "name": "Moss",
-        "player": "Player D",
-        "role": "Frogfolk Bard",
-        "note": "Composes a short rhyme at the end of every session."
       }
     ],
     "objectives": [
@@ -125,21 +107,21 @@ const ADVENTURES = [
     "group": "Ages 13–15",
     "sessions": "Starting soon",
     "status": "recruiting",
-    "spots": "[[N]] spots open",
-    "blurb": "Jubilation fills the air, students fill the halls, and a new dawn rises over the grounds of the Gillview Institute. Professor Gill Octavius III — Viscount of Ardenvale and heir to the throne of Fellmore — welcomes you with all the poise and elegance that only a title that long can carry. Will you study with the wizards, train with the barbarians, sing with the bards, or forge your own path entirely? Gillview is where you find out what kind of adventurer you really are.",
+    "spots": "spots open",
+    "blurb": "Jubilation fills the air, students fill the halls, and a new dawn rises over the grounds of the Gillview Institute. Headmaster Gill Octavius III, Viscount of Ardenvale and heir to the throne of Fellmore welcomes you with all the poise and elegance that only one with a title that long can carry. Will you study with the wizards, train with the barbarians, sing with the bards, or forge your own path entirely? Gillview is where you find out what kind of adventurer you really are.",
     "world": [
       {
         "session": "Session 1",
         "title": "First Day Jitters",
-        "body": "Our heroes prepare themselves for the day ahead — the first step towards becoming a real adventurer. Gillview may be a safe training ground, but that does not mean there are no dangers, and nobody really knows what goes on behind those prestigious walls."
+        "body": "Our heroes prepare themselves for the day ahead, the first step towards becoming a real adventurer. Gillview may be a safe training ground, but that does not mean there are no dangers, and nobody really knows what goes on behind those prestigious walls."
       }
     ],
     "characters": [
       {
         "name": "Professor Gill Octavius III",
-        "player": "",
+        "player": "Non-Player Character",
         "role": "Headmaster, Gillview Institute",
-        "note": "Heir to the most powerful kingdom in the land. In his old age Gill Octavius has taken a more… theoretical approach to adventuring, educating the heroes of a new era — though he never can quite stay out of trouble."
+        "note": "Heir to the most powerful kingdom in the land. In his old age Gill Octavius has taken a more… theoretical approach to adventuring, educating the heroes of a new era though he never can quite stay out of trouble."
       }
     ],
     "objectives": [
@@ -178,27 +160,21 @@ const ADVENTURES = [
   {
     "slug": "multidimensional-detective-agency",
     "name": "Multidimensional Detective Agency",
-    "tagline": "Crime is afoot — or a hand, or a tentacle. You can never really be sure in this wacky whodunnit.",
+    "tagline": "Crime is afoot... or a hand, and sometimes a tentacle. You can never really be sure in this wacky whodunnit.",
     "tone": "quest-6",
     "group": "Ages 15–18",
     "sessions": "Starting soon",
     "status": "recruiting",
-    "spots": "[[N]] spots open",
-    "blurb": "Martin Point began as a waypoint for weary inter-dimensional travellers and grew into a metropolis built on a rift in the fabric of the multiverse. Its maze of back alleys, shopfronts and towering megaliths of industry rests on the shoulders of a workforce with no power at all. Now the curious death of Mayvil Aberneth, leader of the workers' movement, has pulled at a thread — and a whole web of deceit, propaganda and manipulation is beginning to unravel. What happened to Mayvil Aberneth? Who can you trust? And how will you bring justice to Martin Point?",
+    "spots": "spots open",
+    "blurb": "Martin Point a city built on a rift in the fabric of the universe began as a waypoint for weary inter-dimensional travellers has now grown into a metropolis. Its maze of back alleys, shopfronts and towering megaliths of industry rests on the shoulders of a powerless workforce. Now the curious death of Mayvil Aberneth, leader of the workers' movement, has pulled at a thread causing a whole web of deceit, propaganda and manipulation to unravel. What happened to Mayvil Aberneth? Who can you trust? And how will you bring justice to Martin Point?",
     "world": [],
     "characters": [
       {
         "name": "Mayvil Aberneth",
-        "player": "",
+        "player": "Non-Player Character",
         "role": "Organiser, Martin Point Workers' Union",
-        "note": "Spoke for every rift-worker in the city, right up until the morning she didn't. The official record says an accident. The official record says a lot of things."
+        "note": "In a city as large as Martin Point people slip between the cracks, Mayvil was the one to pull them back up, now that she has fallen it is on the city to return that kindness. The official record says an accident. The official record says a lot of things."
       },
-      {
-        "name": "Sergeant Halvo Kesk",
-        "player": "",
-        "role": "Martin Point Constabulary",
-        "note": "Twenty years on the job and the first person to tell you the case is closed. Whether he believes that is the party's first real question."
-      }
     ],
     "objectives": [
       {
