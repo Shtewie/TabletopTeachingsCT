@@ -9,9 +9,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tabletop Teachings</title>
+  <title>D&amp;D Clubs for Kids in [[SUBURB]] | Reading &amp; Confidence | Tabletop Teachings</title>
   <meta name="author" content="Tabletop Teachings" />
-  <meta name="description" content="Small-group Dungeons &amp; Dragons campaigns for kids aged 8–18 in Newcastle . Every session is built around reading, writing and speaking goals. All dice, sheets and books provided. Spots open now." />
+  <meta name="description" content="Small-group Dungeons &amp; Dragons campaigns for kids aged 8–18 in [[SUBURB]]. Every session is built around reading, writing and speaking goals. All dice, sheets and books provided. Spots open now." />
   <link rel="canonical" href="https://tabletopteachings.com/" />
 
   <meta property="og:type" content="website" />
@@ -133,7 +133,7 @@
           <a href="#how-it-works" class="nav-scroll-link">How It Works</a>
           <a href="#live-quests">Adventures</a>
           <a href="#pricing" class="nav-scroll-link">Pricing</a>
-          <a href="#contact" class="nav-cta" data-track-cta="nav">Join an Adventure</a>
+          <a href="#contact" class="nav-cta" data-track-cta="nav">Ask About a Spot</a>
         </div>
       </div>
     </nav>
@@ -141,9 +141,9 @@
     <div class="container">
       <header id="top" class="hero">
         <h1>Taking learning on an adventure</h1>
-        <p>Tabletop Teachings runs solo or group sessions for students aged 8&ndash;18. We explore stories through Dungeons &amp; Dragons gameplay, then teach the fundamental skills behind them of reading, writing and drama.</p>
+        <p>Tabletop Teachings runs solo or group sessions for students aged 8&ndash;18. We explore stories through Dungeons &amp; Dragons gameplay, then teach the fundamental skills behind them &mdash; reading, writing and drama.</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-accent" data-track-cta="hero">Join an Adventure</a>
+          <a href="#contact" class="btn btn-accent" data-track-cta="hero">Ask About a Spot</a>
           <a href="#how-it-works" class="btn btn-ghost">See how a session runs</a>
         </div>
         <p class="hero-reassure">Takes two minutes. We reply within 24 hours.</p>
@@ -229,19 +229,41 @@
           </p>
         </section>
 
-        <!-- ═══ Pricing ══════════════════════════════════════════════════ -->
+        <!-- ═══ Pricing ══════════════════════════════════════════════════
+             The Solo / Small group switch is pure CSS: two radio inputs
+             followed by labels, and `:checked ~` rules in style.css hide the
+             prices for the other mode. No JavaScript, so it can't break.
+             To edit a price, change BOTH the .for-group and .for-solo
+             version of that card.
+        ══════════════════════════════════════════════════════════════════ -->
         <section id="pricing" class="section">
           <h2 class="section-title">What It Costs</h2>
           <p class="section-sub">No joining fee, no equipment to buy, no lock-in contract. Cancel with [[NOTICE_PERIOD]] notice.</p>
+
+          <input type="radio" name="pricing-mode" id="mode-group" class="pricing-radio" checked />
+          <input type="radio" name="pricing-mode" id="mode-solo" class="pricing-radio" />
+          <div class="pricing-toggle" role="radiogroup" aria-label="Session type">
+            <label for="mode-group">Small group</label>
+            <label for="mode-solo">One-on-one</label>
+          </div>
+
           <div class="pricing-grid">
             <article class="price-card">
               <h3>Single Session</h3>
-              <p class="price-desc">Try a solo or group session before committing to a campaign.</p>
-              <p class="price-amount">$40 <span class="price-unit">per session</span></p>
-              <p class="price-note"> 1hr solo  · 2hrs for groups of 2&ndash;6</p>
+              <p class="price-desc for-group">Try a group session before committing to a campaign.</p>
+              <p class="price-desc for-solo">Try a one-on-one session before committing to a campaign.</p>
+
+              <p class="price-amount for-group">$40 <span class="price-unit">per session</span></p>
+              <p class="price-note for-group">2 hours &middot; groups of 2&ndash;6</p>
+
+              <p class="price-amount for-solo">$[[SOLO_SESSION]] <span class="price-unit">per session</span></p>
+              <p class="price-note for-solo">1 hour &middot; one-on-one with the DM</p>
+
               <ul class="price-list">
                 <li>All equipment provided</li>
                 <li>Take-home resource</li>
+                <li class="for-group">Drop into a running campaign</li>
+                <li class="for-solo">Pace set entirely by your child</li>
               </ul>
               <a href="#contact" class="btn btn-accent btn-block" data-track-cta="pricing-single">Join an Adventure</a>
             </article>
@@ -249,11 +271,18 @@
             <article class="price-card is-featured">
               <span class="price-flag">Most families choose this</span>
               <h3>Term Campaign</h3>
-              <p class="price-desc">A full story arc across a school term, same table every week.</p>
-              <p class="price-amount">$35 <span class="price-unit">per session</span></p>
-              <p class="price-note">Billed per term · 10 sessions</p>
+              <p class="price-desc for-group">A full story arc across a school term, same table every week.</p>
+              <p class="price-desc for-solo">A full story arc across a school term, written for one player.</p>
+
+              <p class="price-amount for-group">$35 <span class="price-unit">per session</span></p>
+              <p class="price-note for-group">$350 per term &middot; 10 sessions &middot; 2 hours each</p>
+
+              <p class="price-amount for-solo">$[[SOLO_TERM]] <span class="price-unit">per session</span></p>
+              <p class="price-note for-solo">$[[SOLO_TERM_TOTAL]] per term &middot; 10 sessions &middot; 1 hour each</p>
+
               <ul class="price-list">
-                <li>Campaign written around your child's goals</li>
+                <li class="for-group">Campaign written around your group's goals</li>
+                <li class="for-solo">Campaign written around your child alone</li>
                 <li>Personalised learning record</li>
                 <li>Weekly take-home materials</li>
                 <li>Progress updates for parents</li>
@@ -265,7 +294,7 @@
               <h3>Schools &amp; Services</h3>
               <p class="price-desc">For schools, libraries, OOSH and support services.</p>
               <p class="price-amount"><span class="price-prefix">From</span> $[[XX]] <span class="price-unit">per group</span></p>
-              <p class="price-note">On-site · [[SESSION_LENGTH]] blocks</p>
+              <p class="price-note">On-site &middot; 2 hour blocks</p>
               <ul class="price-list">
                 <li>Mapped to your literacy goals</li>
                 <li>Written reporting on request</li>
@@ -274,7 +303,7 @@
               <a href="#contact" class="btn btn-accent btn-block" data-track-cta="pricing-schools">Request a Quote</a>
             </article>
           </div>
-          <p class="pricing-footnote">Sibling and concession rates are available</p>
+          <p class="pricing-footnote">Sibling and concession rates are available &mdash; just mention it when you get in touch.</p>
         </section>
 
         <!-- ═══ Safety ═══════════════════════════════════════════════════ -->
@@ -398,7 +427,8 @@
         <section id="contact" class="section cta-band" style="margin-bottom: 0;">
           <h2>Ready to roll for initiative?</h2>
           <p>Tell us about your young adventurer &mdash; their age, their interests, and what you'd like them to get better at. We'll tell you honestly whether we've got the right table for them.</p>
-          <a href="https://forms.gle/FaDSAM434s5T8QVz7" target="_blank" rel="noopener noreferrer" class="btn btn-accent" data-track-cta="footer-form">Join an Adventure</a>
+          <a href="https://forms.gle/FaDSAM434s5T8QVz7" target="_blank" rel="noopener noreferrer" class="btn btn-accent" data-track-cta="footer-form">Ask About a Spot</a>
+          <p class="cta-alt">Prefer email? <a href="mailto:[[EMAIL]]">[[EMAIL]]</a> &nbsp;·&nbsp; Or call <a href="tel:[[PHONE_RAW]]">[[PHONE]]</a></p>
         </section>
       </main>
 
@@ -411,15 +441,16 @@
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </p>
-        <p>Tabletop Teachings &mdash; D&amp;D adventures that teach, in Newcastle and online.</p>
+        <p>Tabletop Teachings &mdash; D&amp;D adventures that teach, in [[SUBURB]] and online.</p>
+        <p class="footer-meta">&copy; <span id="year"></span> Tabletop Teachings &nbsp;·&nbsp; ABN [[ABN]]</p>
       </footer>
     </div>
   </div>
 
   <!-- Sticky CTA for phones, where most ad traffic lands. -->
   <div class="mobile-cta">
-    <p>Spots open now in Newcastle</p>
-    <a href="#contact" class="btn btn-accent" data-track-cta="mobile-sticky">Join an Adventure</a>
+    <p>Spots open now in [[SUBURB]]</p>
+    <a href="#contact" class="btn btn-accent" data-track-cta="mobile-sticky">Ask About a Spot</a>
   </div>
 
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>

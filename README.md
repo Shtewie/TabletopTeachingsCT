@@ -18,7 +18,10 @@ grep -rn '\[\[' --include=*.html --include=*.js --include=*.xml --include=*.txt 
 |---|---|---|
 | `[[SUBURB]]` | The suburb or city you run in | `index.html` |
 | `[[EMAIL]]` / `[[PHONE]]` / `[[PHONE_RAW]]` | Contact details. `PHONE_RAW` is the dial-able version, e.g. `+61412345678` | `index.html` |
-| `[[XX]]` ×3 | Your prices | `index.html` pricing |
+| `[[XX]]` | Schools & Services starting price | `index.html` pricing |
+| `[[SOLO_SESSION]]` | One-on-one single session price | `index.html` pricing |
+| `[[SOLO_TERM]]` | One-on-one per-session term price | `index.html` pricing |
+| `[[SOLO_TERM_TOTAL]]` | One-on-one total per term (per-session × 10) | `index.html` pricing |
 | `[[N]]` | Number of sessions per term; also spots open per campaign | `index.html`, `js/adventures-data.js` |
 | `[[SESSION_LENGTH]]` | e.g. `2 hours` | `index.html` |
 | `[[SCHEDULE]]` / `[[VENUE]]` | e.g. `Saturday mornings` / the venue name | FAQ |
@@ -99,6 +102,12 @@ back.
 **Never put a real child's name in `player`.** Use `Player A` style labels, or
 leave it as `""` for NPCs. The site states publicly that you don't publish
 players' names; that promise has to hold.
+
+**Prices** — the Solo / Small group switch in the pricing section is pure CSS:
+two radio inputs and `:checked ~` rules, no JavaScript. Each card holds both
+sets of prices, tagged `.for-group` and `.for-solo`. **When you change a price,
+change it in both places** — it's easy to update the group figure and leave the
+one-on-one one stale.
 
 **Colours / fonts** — all at the top of `css/style.css` under `:root`. Six
 "quest" tones (`--quest-1` … `--quest-6`) are reused across cards, tags and
