@@ -30,6 +30,11 @@
   --accent-foreground: oklch(0.99 0.006 90);
   --border: oklch(0.9 0.026 84);
 
+  /* Button blue. Darker than --quest-1 so white label text clears 4.5:1;
+     the quest tone is fine behind icons but not behind text. */
+  --blue: oklch(0.48 0.15 250);
+  --blue-foreground: oklch(0.99 0.006 90);
+
   /* Quest tones: bold icon colour + soft card wash for each */
   --quest-1: oklch(0.72 0.13 235);
   --quest-1-soft: oklch(0.965 0.022 235);
@@ -227,6 +232,15 @@ summary:focus-visible {
   box-shadow: 0 6px 0 0 color-mix(in oklab, var(--primary) 60%, black);
 }
 .btn-primary:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+.btn-blue {
+  background: var(--blue);
+  color: var(--blue-foreground);
+  box-shadow: 0 6px 0 0 color-mix(in oklab, var(--blue) 60%, black);
+}
+.btn-blue:active {
   transform: translateY(4px);
   box-shadow: none;
 }
